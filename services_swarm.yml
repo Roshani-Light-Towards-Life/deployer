@@ -1,0 +1,41 @@
+version: "3"
+services:
+    nginx:
+      image: yrameshrao/nginx:latest
+      depends_on:
+        - area51
+        - litil
+        - postgres
+      ports:
+        - "80:80"
+      networks:
+        - root  
+
+    litil:
+      image: yrameshrao/roshani-litil
+      networks:
+        - root 
+
+    area51:
+      image: yrameshrao/roshani-area51
+      networks:
+        - root 
+
+    postgres:
+      image: postgres:12
+      networks:
+        - root 
+      restart: always
+      environment:
+        POSTGRES_PASSWORD: example
+
+    adminer:
+      image: adminer
+      restart: always
+      ports:
+        - 8080:8080
+      networks:
+        - root 
+
+networks:
+  root:
