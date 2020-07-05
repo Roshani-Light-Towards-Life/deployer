@@ -3,7 +3,6 @@ services:
     nginx:
       image: yrameshrao/roshani-nginx:latest
       depends_on:
-        - area51
         - litil
         - postgres
       ports:
@@ -32,8 +31,6 @@ services:
     adminer:
       image: adminer
       restart: always
-      ports:
-        - 8080:8080
       networks:
         - root 
 
