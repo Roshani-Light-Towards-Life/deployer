@@ -11,7 +11,8 @@ do
         echo "$name Boot Check Result: $nonBootDisk"
         if [  $nonBootDisk -eq 0 ] 
         then
-            fileSystemExsists=$(blkid | grep "$name:.*ext" | wc -l )
+            fileSystemExsists=$(blkid | grep "$name:.*ext" | wc -l)
+            echo "fileSystemExsists: $fileSystemExsists"
             if [ $fileSystemExsists -eq 0 ] 
             then
                mkfs -t ext4 "$name" 
