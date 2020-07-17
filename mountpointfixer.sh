@@ -12,7 +12,7 @@ do
         if [  $nonBootDisk -eq 0 ] 
         then
             fileSystemExsists=$(blkid | grep "$name:.*ext" | wc -l )
-            if [  $fileSystemExsists -eq 0 ] 
+            if [ $fileSystemExsists -eq 0 ] 
             then
                mkfs -t ext4 "$name" 
             fi
