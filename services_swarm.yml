@@ -25,6 +25,8 @@ services:
       networks:
         - root 
       restart: always
+      volumes:
+        - /opt/persistent_data/postgres-data:/var/lib/postgresql/data
       environment:
         POSTGRES_PASSWORD: example
 
