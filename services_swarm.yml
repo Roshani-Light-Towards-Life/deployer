@@ -11,12 +11,12 @@ services:
         - root  
 
     litil:
-      image: yrameshrao/roshani-litil
+      image: roshnkmri/roshani-litil
       networks:
         - root 
 
     area51:
-      image: yrameshrao/roshani-area51
+      image: roshnkmri/roshani-area51
       networks:
         - root 
       volumes:
