@@ -19,6 +19,8 @@ services:
       image: yrameshrao/roshani-area51
       networks:
         - root 
+      volumes:
+        - /opt/persistent_data/area51-data:/srv/app        
 
     postgres:
       image: postgres:12
